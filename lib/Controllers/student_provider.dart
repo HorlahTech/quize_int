@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:quize_int/Controllers/database_helper.dart';
+import 'package:quize_int/Models/students.dart';
 
 class StudentProvider extends ChangeNotifier {
   int? _currentStudentId;
@@ -61,3 +64,15 @@ class StudentProvider extends ChangeNotifier {
 //     notifyListeners();
 //   }
 // }
+class StudentNotifierProvider extends StateNotifier<List<Student>>{
+  StudentNotifierProvider():super([]);
+void addStudent(Student student) async {
+   await DatabaseHelper.insertStudent(student);
+  state =  [...state, student];
+  print( state);
+}
+  Future<List<Student>> getAllStudent()async {
+  return state = await DatabaseHelper.getStudents() ;
+}
+}
+final studentNotifier = StateNotifierProvider<StudentNotifierProvider, List<Student>>((ref) => StudentNotifierProvider());

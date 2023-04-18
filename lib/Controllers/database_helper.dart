@@ -1,5 +1,5 @@
 import 'package:path/path.dart';
-import 'package:quize_int/students.dart';
+import 'package:quize_int/Models/students.dart';
 import 'package:sqflite/sqflite.dart';
 
 class DatabaseHelper {
@@ -15,7 +15,7 @@ class DatabaseHelper {
       path,
       onCreate: (db, version) {
         return db.execute(
-          'CREATE TABLE students(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,username TEXT PRIMARY KEY, password TEXT, score INTEGER)',
+          'CREATE TABLE students(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,username TEXT, password TEXT, score INTEGER)',
         );
       },
       version: _version,

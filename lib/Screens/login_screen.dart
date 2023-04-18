@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:quize_int/QuizeSubjectsScreen.dart';
-import 'package:quize_int/student_provider.dart';
-import 'package:quize_int/students.dart';
-import 'package:quize_int/text_form_field.dart';
+import 'package:quize_int/Screens/QuizeSubjectsScreen.dart';
+import 'package:quize_int/Controllers/student_provider.dart';
+import 'package:quize_int/Models/students.dart';
+import 'package:quize_int/widgets/text_form_field.dart';
 
-import 'database_helper.dart';
+import '../Controllers/database_helper.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -72,16 +72,18 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Login Form'),
-      ),
+
       body: Form(
         key: _formKey,
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
+              SizedBox(height: 100,),
+              Text('Sign in'),
+              SizedBox(height: 50,),
               TextFields(
                 controller: _usernameController,
                 validator: (value) {
@@ -92,6 +94,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 },
                 obscureText: false,
                 labelText: 'Username',
+                hintText: 'Username',
               ),
               SizedBox(height: 16),
               TextFields(
@@ -105,7 +108,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 },
                 obscureText: true,
               ),
-              SizedBox(height: 16),
+              Expanded(child: SizedBox.shrink()),
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(

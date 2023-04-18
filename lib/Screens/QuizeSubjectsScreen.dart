@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:quize_int/questions.dart';
-import 'package:quize_int/quize_screen.dart';
-import 'package:quize_int/subject_card.dart';
+import 'package:quize_int/Models/questions.dart';
+import 'package:quize_int/Screens/quize_screen.dart';
+import 'package:quize_int/widgets/subject_card.dart';
 
 class QuizSubjectsScreen extends StatelessWidget {
   Questions _questions = Questions();

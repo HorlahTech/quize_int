@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:quize_int/database_helper.dart';
-import 'package:quize_int/student_provider.dart';
+import 'package:quize_int/Controllers/database_helper.dart';
+import 'package:quize_int/Controllers/student_provider.dart';
 
 class QuizSummaryScreen extends StatelessWidget {
   final List<Map<String, dynamic>> questions;

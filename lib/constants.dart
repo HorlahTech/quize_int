@@ -7,11 +7,11 @@ final secondaryColor = Color(0xFF03DAC6);
 final backgroundColor = Color(0xFFF5F5F5);
 
 final headerTextStyle = GoogleFonts.roboto(
-  fontSize: 32.sp,
+  fontSize: 22.sp,
   fontWeight: FontWeight.bold,
   color: primaryColor,
 );
-
+final EdgeInsetsGeometry defaultPagePading = EdgeInsets.symmetric(vertical: 20.h, horizontal: 20.w);
 final bodyTextStyle = GoogleFonts.roboto(
   fontSize: 16.sp,
   color: Colors.black87,

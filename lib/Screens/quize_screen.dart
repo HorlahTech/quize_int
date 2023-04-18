@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quize_int/summary_screen.dart';
+import 'package:quize_int/Screens/summary_screen.dart';
 
 class QuizScreen extends StatefulWidget {
   final List<Map<String, dynamic>> questions;
